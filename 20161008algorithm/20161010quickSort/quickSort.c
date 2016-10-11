@@ -1,58 +1,67 @@
 
-#include"quickSort.h"
+//#include"quickSort.h"
+
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
 
 
-Range new_Range(int s, int e) 
+void swap(int *a, int *b)
 {
-	Range r;
-	r.start = s;
-	r.end = e;
-	return r;
+	int tmp = 0;
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
 }
-void swap(int *x, int *y) 
+void quickSort(int arr[], int len)
 {
-	int t = *x;
-	*x = *y;
-	*y = t;
-}
+	int low, high, pivot;
+	low = 0;//初始化低位
+	high = len - 1;//初始化高位
+	pivot = 0;//初始化枢轴
 
-void quick_sort(int arr[], const int len) 
-{
-	if (len <= 0)
-		return; //避免len等於負值時宣告堆疊陣列當機
-	//r[]模擬堆疊,p為數量,r[p++]為push,r[--p]為pop且取得元素
-	struct Range * r;
-	r = (Range *)malloc(len * sizeof(Range));
-	int p = 0;
-	r[p++] = new_Range(0, len - 1);
-	while (p) 
+	while(low < high)
 	{
-		Range range = r[--p];
-		if (range.start >= range.end)
-			continue;
-		int mid = arr[range.end];
-		int left = range.start, right = range.end - 1;
-		while (left < right) 
+		if(arr[low] > arr[pivot])
 		{
-			while (arr[left] < mid && left < right)
-				left++;
-			while (arr[right] >= mid && left < right)
-				right--;
-			swap(&arr[left], &arr[right]);
+			swap(&arr[low],&arr[pivot]);
+			pivot = low;
 		}
-		if (arr[left] >= arr[range.end])
-			swap(&arr[left], &arr[range.end]);
-		else
-			left++;
-		r[p++] = new_Range(range.start, left - 1);
-		r[p++] = new_Range(left + 1, range.end);
+		if(arr[high] < arr[pivot])
+		{
+			swap(&arr[pivot], &arr[high]);
+			pivot = high;
+		}
+		low++;
+		high--;
+
 	}
-	free(r);
+
+
+
+
+
 }
 
 int main(int argc, char* argv[])
 {
+	int i;
 	int arr[6] = {9,3,6,2,5,1};
-	quick_sort(arr, sizeof(arr));
+	quickSort(arr, sizeof(arr)/sizeof(int));
+	for(i = 0; i < 6; i++)
+	{
+		printf("arr[%d]\n",arr[i]);
+	}
+
+/*	return 0;
+	
+
+	int x = 5;
+	int y = 6;
+	int* xp = &x;
+	int* yp = &y;
+	swap(xp, yp)
+	swap(&x, &y);
+	printf("x=%d, y=%d\n", x, y);;*/
 	return 0;
 }

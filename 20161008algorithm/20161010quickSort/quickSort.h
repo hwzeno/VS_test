@@ -6,7 +6,7 @@
 typedef struct _Range 
 {
 	int start, end;
-} Range;
+}Range;
 
 
 Range new_Range(int s, int e) ;
