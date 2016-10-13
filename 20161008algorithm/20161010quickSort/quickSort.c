@@ -5,7 +5,7 @@
 #include<string.h>
 #include<stdlib.h>
 
-
+#define L 6
 void swap(int *a, int *b)
 {
 	int tmp = 0;
@@ -13,41 +13,45 @@ void swap(int *a, int *b)
 	*a = *b;
 	*b = tmp;
 }
-void quickSort(int arr[], int len)
+int partition(int arr[], int low, int high)
 {
-	int low, high, pivot;
-	low = 0;//初始化低位
-	high = len - 1;//初始化高位
-	pivot = 0;//初始化枢轴
-
+	int pivot;
+	pivot = arr[low];//初始化枢轴
+	arr[0] = arr[low];
 	while(low < high)
 	{
-		if(arr[low] > arr[pivot])
+		if(arr[low] < arr[high]  && pivot <= high)
 		{
-			swap(&arr[low],&arr[pivot]);
-			pivot = low;
+			high --;
 		}
-		if(arr[high] < arr[pivot])
-		{
-			swap(&arr[pivot], &arr[high]);
-			pivot = high;
-		}
-		low++;
-		high--;
+		swap(&arr[low], &arr[high]);
 
+
+		if(arr[low] < arr[high] && low >= pivot)
+		{
+			
+			low ++;
+		}
+		swap(&arr[low],&arr[high]);
+	return low;
 	}
-
-
-
-
-
+}//end of partition
+void quickSort(int arr[], int low, int high)
+{
+	int privot;
+	if(low < high)
+	{
+		privot = partition(arr, low, high);
+		quickSort(arr, low, privot - 1);
+		quickSort(arr, privot + 1, high);
+	}
 }
 
 int main(int argc, char* argv[])
 {
 	int i;
-	int arr[6] = {9,3,6,2,5,1};
-	quickSort(arr, sizeof(arr)/sizeof(int));
+	int arr[L] = {9,3,6,2,5,1};
+	quickSort(arr, arr[0], arr[L - 1]);
 	for(i = 0; i < 6; i++)
 	{
 		printf("arr[%d]\n",arr[i]);
@@ -62,6 +66,6 @@ int main(int argc, char* argv[])
 	int* yp = &y;
 	swap(xp, yp)
 	swap(&x, &y);
-	printf("x=%d, y=%d\n", x, y);;*/
+	printf("x=%d, y=%d\n", x, y);*/
 	return 0;
 }
