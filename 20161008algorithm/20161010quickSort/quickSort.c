@@ -51,11 +51,14 @@ int main(int argc, char* argv[])
 {
 	int i;
 	int arr[L] = {9,3,6,2,5,1};
-	quickSort(arr, arr[0], arr[L - 1]);
+	quickSort(arr, 0, L - 1);
 	for(i = 0; i < 6; i++)
 	{
 		printf("arr[%d]\n",arr[i]);
 	}
+	
+
+
 
 /*	return 0;
 	
