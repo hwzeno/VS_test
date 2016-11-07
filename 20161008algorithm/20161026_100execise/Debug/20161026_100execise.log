@@ -1,14 +1,14 @@
-﻿生成启动时间为 2016/10/31 11:27:33。
+﻿生成启动时间为 2016/11/7 16:22:54。
      1>项目“C:\Users\quhw16655.HS\documents\visual studio 2012\Projects\20161008algorithm\20161026_100execise\20161026_100execise.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TC /analyze- /errorReport:prompt 100Execise.c
          100Execise.c
+     1>c:\users\quhw16655.hs\documents\visual studio 2012\projects\20161008algorithm\20161026_100execise\100execise.c : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\quhw16655.HS\documents\visual studio 2012\Projects\20161008algorithm\Debug\20161026_100execise.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\quhw16655.HS\documents\visual studio 2012\Projects\20161008algorithm\Debug\20161026_100execise.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\quhw16655.HS\documents\visual studio 2012\Projects\20161008algorithm\Debug\20161026_100execise.lib" /MACHINE:X86 Debug\100Execise.obj
-     1>MSVCRTD.lib(crtexe.obj) : error LNK2019: 无法解析的外部符号 _main，该符号在函数 ___tmainCRTStartup 中被引用
-     1>C:\Users\quhw16655.HS\documents\visual studio 2012\Projects\20161008algorithm\Debug\20161026_100execise.exe : fatal error LNK1120: 1 个无法解析的外部命令
-     1>已完成生成项目“C:\Users\quhw16655.HS\documents\visual studio 2012\Projects\20161008algorithm\20161026_100execise\20161026_100execise.vcxproj”(Build 个目标)的操作 - 失败。
+         20161026_100execise.vcxproj -> C:\Users\quhw16655.HS\documents\visual studio 2012\Projects\20161008algorithm\Debug\20161026_100execise.exe
+     1>已完成生成项目“C:\Users\quhw16655.HS\documents\visual studio 2012\Projects\20161008algorithm\20161026_100execise\20161026_100execise.vcxproj”(Build 个目标)的操作。
 
-生成失败。
+生成成功。
 
-已用时间 00:00:01.47
+已用时间 00:00:00.90
